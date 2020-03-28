@@ -9,7 +9,6 @@ import { auth } from "../../firebase/firebase.utils";
 import { createStructuredSelector } from "reselect";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-import { setCurrentUser } from "../../redux/user/user.actions";
 import {
   HeaderContainer,
   LogoContainer,
@@ -49,8 +48,4 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden
 });
 
-const mapDispatchToprops = dispatch => ({
-  setCurrentUser: item => dispatch(setCurrentUser(item))
-});
-
-export default connect(mapStateToProps, mapDispatchToprops)(Header);
+export default connect(mapStateToProps)(Header);
